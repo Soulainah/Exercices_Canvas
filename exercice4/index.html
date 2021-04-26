@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice Canvas</title>
+</head>
+<!--PARTIE HTML-->
+<body>
+    <h1>Canvas : Reproduire une soucoupe volante</h1>
+    <canvas id="canvas" width="300" height="300">Dessin réalisé avec Canvas</canvas>
+<!--PARTIE JAVASCRIPT-->
+    <script>
+    var canvas = document.getElementById("canvas");
+    var ctx = canvas.getContext("2d");
+    ctx.beginPath();
+    ctx.fillStyle = "lightgrey";
+    ctx.moveTo(100, 200);
+    ctx.quadraticCurveTo(200, 100, 300, 200);
+    ctx.fill();
+
+    ctx.beginPath();
+    ctx.fillStyle = "lightgrey";
+    ctx.moveTo(100, 200);
+    ctx.quadraticCurveTo(200, 300, 300, 200);
+    ctx.fill();
+
+    ctx.beginPath();
+    ctx.strokeStyle = "red";
+    ctx.moveTo(160, 160);
+    ctx.quadraticCurveTo(200, 80, 240, 160);
+    ctx.moveTo(240, 160);
+    ctx.quadraticCurveTo(200, 140, 160, 160);
+    ctx.stroke();
+    ctx.fillStyle = "red";
+    ctx.fill();
+        
+    </script>
+</body>
+</html>

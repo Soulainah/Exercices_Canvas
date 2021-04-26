@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice Canvas</title>
+<!--PARTIE CSS-->
+    <style>
+        canvas {
+        
+            }
+    </style>
+</head>
+<!--PARTIE HTML-->
+<body>
+    <h1>Canvas : Reproduire une voiture</h1>
+    <canvas id="canvas">Dessin réalisé avec Canvas</canvas>
+<!--PARTIE JAVASCRIPT-->
+    <script>
+        //VOITURE
+        var canvas = document.getElementById("canvas");
+        var ctx = canvas.getContext("2d");
+
+        canvas.width = 400;
+        canvas.height = 400;
+        //STUCTURE VOITURE
+        ctx.beginPath(); //ouverture code
+
+        ctx.fillStyle = "green"; //remplir (background)
+        ctx.fillRect(100, 25, 80, 30); //1er rectangle X Y WIDTH HEIGHT
+        ctx.fillRect(70, 45, 140, 35); //2eme rectangle X Y WIDTH HEIGHT
+
+        ctx.fillStyle = "gray"; //remplir (background)
+        ctx.arc(100, 77, 16, 0, Math.PI * 2); //X Y WIDTH HEIGHT ; Math.PI * 2 = on divise notre cercle par 2
+        ctx.arc(180, 77, 16, 0, Math.PI * 2); //X Y WIDTH HEIGHT ; Math.PI * 2 = on divise notre cercle par 2
+
+        ctx.closePath(); //fermeture des points
+        ctx.fill(); //appeler la fonction du background
+
+    </script>
+</body>
+</html>

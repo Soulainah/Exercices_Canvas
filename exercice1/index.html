@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice Canvas</title>
+<!--PARTIE CSS-->
+    <style>
+        canvas{
+            border: 5px solid #bada55;
+            }
+    </style>
+</head>
+<!--PARTIE HTML-->
+<body>
+    <h1>Canvas : Reproduire une maison</h1>
+    <canvas id="canvas" width="250" height="300">Dessin réalisé avec Canvas</canvas>
+<!--PARTIE JAVASCRIPT-->
+    <script>
+        var canvas = document.getElementById("canvas");
+        var ctx = canvas.getContext("2d"); //On definit du plat 
+
+        canvas.width = 400;
+        canvas.height = 400;
+        //TOIT
+        ctx.beginPath(); //Debut de dessin
+        ctx.fillStyle = "rgb(141, 54, 4)"; //remplir (background)
+        ctx.moveTo(70, 60); //La ou on pose son crayon
+        ctx.lineTo(125, 0); //dessiner point X et point Y
+        ctx.lineTo(180, 60); //dessiner un 2eme point on prend à partir du X d'au-dessus 
+        ctx.lineTo(70, 60); //repartir du X
+        ctx.fill(); //appeler la fonction du background
+        //BATI
+        ctx.fillStyle = "rgb(228, 149, 96)"; //remplir (background)
+        ctx.fillRect(70, 60, 110, 100); //rectangle X Y WIDTH HEIGHT
+
+        //FENETRE 1
+        ctx.fillStyle = "rgb(96, 228, 221)"; //remplir (background)
+        ctx.fillRect(85, 70, 20, 20); //rectangle X Y WIDTH HEIGHT
+        //FENETRE 2
+        ctx.fillStyle = "rgb(96, 228, 221)"; //remplir (background)
+        ctx.fillRect(145, 70, 20, 20); //rectangle X Y WIDTH HEIGHT
+        //PORTE
+        ctx.fillStyle = "darkcyan"; //remplir (background)
+        ctx.fillRect(115, 120, 25, 40); //rectangle X Y WIDTH HEIGHT
+
+        ctx.closePath(); //Fin du dessin
+    </script>
+</body>
+</html>

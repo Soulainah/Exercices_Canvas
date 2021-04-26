@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice Canvas</title>
+<!--PARTIE CSS-->
+    <style>
+        canvas{
+            border: 5px solid #bada55;
+            }
+    </style>
+</head>
+<!--PARTIE HTML-->
+<body>
+    <h1>Canvas : Reproduire un cone de glace</h1>
+    <canvas id="canvas" width="250" height="300">Dessin réalisé avec Canvas</canvas>
+<!--PARTIE JAVASCRIPT-->
+    <script>
+        var canvas = document.getElementById("canvas");
+        var ctx = canvas.getContext("2d"); //On definit du plat 
+
+        canvas.width = 400;
+        canvas.height = 400;
+        //glace
+        //premiere boule
+        ctx.beginPath(); //Debut de dessin
+        ctx.fillStyle = "pink"; //remplir (background)
+        ctx.arc(200, 100, 70, 0, Math.PI * 2); //X Y WIDTH HEIGHT ; Math.PI * 1 = on divise notre cercle par 2      
+        ctx.fill()
+        //deuxieme boule
+        ctx.beginPath(); //Debut de dessin
+        ctx.fillStyle = "brown"; //remplir (background)
+        ctx.arc(155, 170, 60, 0, Math.PI * 2); //X Y WIDTH HEIGHT ; Math.PI * 1 = on divise notre cercle par 2
+        ctx.fill();
+        //troisieme boule
+        ctx.beginPath(); //Debut de dessin
+        ctx.fillStyle = "yellow"; //remplir (background)
+        ctx.arc(250, 170, 60, 0, Math.PI * 2); //X Y WIDTH HEIGHT ; Math.PI * 1 = on divise notre cercle par 2
+        ctx.fill();
+        //cone
+        ctx.beginPath(); //Debut de dessin
+        //TOIT
+        ctx.fillStyle = "rgb(228, 149, 96)"; //remplir (background)
+        ctx.moveTo(200, 400); //La ou on pose son crayon
+        ctx.lineTo(310, 200); //dessiner point X et point Y
+        ctx.lineTo(90, 200); //dessiner un 2eme point on prend à partir du X d'au-dessus 
+
+        ctx.fill(); //appeler la fonction du background
+        ctx.closePath(); //Fin du dessin      
+    </script>
+</body>
+</html>
